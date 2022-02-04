@@ -12,6 +12,7 @@ public class EvaluacionIOswaldM {
         EvaluacionIOswaldM llamado = new EvaluacionIOswaldM();
         
         llamado.funcion1();
+        llamado.funcion3();
         }
     //PRIMER EJERCICIO
     public void funcion1(){
@@ -121,9 +122,81 @@ public class EvaluacionIOswaldM {
                 }
                 System.out.println(" ");
             }
-        }
+        }       
+    }
+    //SEGUNDO EJERCICIO:
+    public void funcion2(){
     
+           System.out.println("\n*** SEGUNDA FUNCION ***");
+           
+           System.out.print("Ingrse el numero de filas de su matriz: ");
+           int filas = entrada.nextInt();
+           System.out.print("Ingrese el numero de columnas de su matriz: ");
+           int columnas = entrada.nextInt();
     
+    }
+    
+    //TERCER EJECICIO:
+    public void funcion3(){
+        
+           System.out.println("\n*** TERCERA FUNCION ***");
+           
+           System.out.print("Ingrese el numero de filas de su matriz: ");
+           int filas = entrada.nextInt();
+           System.out.print("Ingrese el numero de columnas de su matriz: ");
+           int columnas = entrada.nextInt();
+           
+           //VARIABLES PARA COMPROBAR SI LA MATRIZ ES IDENTIDAD:
+           int ceros = 0, unos = 0;
+           boolean identidad = true;
+           
+           int matriz[][] = new int[filas][columnas];
+           
+           //LLENADO DE LA MATRIZ:
+           for (int i = 0; i < filas; i++) {
+               for (int j = 0; j < columnas; j++) {
+                   System.out.print("Ingrese un elemento de su matriz: ");
+                   matriz[i][j] = entrada.nextInt();
+               }
+            }
+           
+           //IMPRIMIR LA MATRIZ:
+           System.out.println("\nSu matriz es: ");
+           for (int i = 0; i < filas; i++) {
+               for (int j = 0; j < columnas; j++) {
+                   System.out.print( matriz [i][j]+ " ");
+               }
+               System.out.println(" ");   
+            }
+           
+           //RECORRIDO DE LA MATRIZ PARA COMPROBAR LOS ELEMENTOS:
+           for (int i = 0; i < filas; i++) {
+               for (int j = 0; j < columnas; j++) {
+                   //IDENTIFICANDO LOS CEROS Y SUMANDOLOS EN VARIABLE ACUMULADORA:
+                   if(matriz[i][j] == 0){
+                   ceros++;
+                   }
+                   //IDENTIFICANDO LOS UNOS Y SUMANDOLOS EN VARIABLE ACUMULADORA:
+                   else if(matriz[i][j] == 1){
+                   unos++;
+                   }
+               }
+               //SI LA CANTIDAD DE CEROS ES DIFERENTE AL NUMERO DE COLUMNAS MENOS 1 (LUGAR QUE OCUPA EL NÚMERO 1) O SI LA CANTIDAD DE UNOS ES DIFERENTE A 1
+               if(ceros != (columnas-1)|| unos != 1){
+                   identidad = false;
+               } 
+               //REINICIANDO VALORES:
+               ceros = 0;
+               unos = 0;
+           }
+           //SI SE CUMPLE QUE IDENTIDAD ES VERDADERO ENTONCES MOSTRAR MENSAJE
+           if (identidad == true){
+               System.out.println("La matriz es identidad");
+           }
+           //SI NO SE CUMPLE, ENTONCES MOSNTRAR MENSAJE
+           else{
+               System.out.println("La matriz no es identidad");
+           }
     }
     
 }
