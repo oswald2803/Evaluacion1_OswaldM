@@ -12,6 +12,7 @@ public class EvaluacionIOswaldM {
         EvaluacionIOswaldM llamado = new EvaluacionIOswaldM();
         
         llamado.funcion1();
+        llamado.funcion2();
         llamado.funcion3();
         }
     //PRIMER EJERCICIO
@@ -87,19 +88,32 @@ public class EvaluacionIOswaldM {
                 System.out.println(" ");
             }
             
+            //NUMERO DE FILAS Y COLUMNAS DE LA TERCERA MATRIZ:
+            System.out.print("\nIngrese el numero de filas de su tercera matriz:");
+            int f3 = entrada.nextInt();
+            System.out.print("Ingrese el numero de columnas de su tercera matriz: ");
+            int c3 = entrada.nextInt();
+            
+            //VERIFICAR SI ES DE LA MISMA DIMENSION DE LAS OTRAS:
+            int M_3[][] = new int[f3][c3];
+            //SI NO COINCIDEN:
+            if(M_3.length != sum.length){
+                System.out.println("Las matrices no se pueden multiplicar porque su numero de filas y/o columnas no coinciden");
+            }     
+            //SI COINCIDEN:
+            else{
             //LLENAR LA TERCERA MATRIZ:
             System.out.println("");
-            int M_3[][] = new int[f1][c1];
-            for (int i = 0; i < f1; i++) {
-                for (int j = 0; j < c1; j++) {
+            for (int i = 0; i < f3; i++) {
+                for (int j = 0; j < c3; j++) {
                     System.out.print("Ingrese un elemento de su tercera matriz: ");
                     M_3[i][j] = entrada.nextInt();
                 }
             }
             //MOSTRAR TERCERA MATRIZ:
             System.out.println("\nSu tercera matriz es: ");
-            for (int i = 0; i < c1; i++) {
-                for (int j = 0; j < f1; j++) {
+            for (int i = 0; i < f3; i++) {
+                for (int j = 0; j < c3; j++) {
                     System.out.print(M_3[i][j] + " ");
                 }
                 System.out.println(" ");
@@ -122,18 +136,35 @@ public class EvaluacionIOswaldM {
                 }
                 System.out.println(" ");
             }
-        }       
+        }
+        }    
     }
     //SEGUNDO EJERCICIO:
     public void funcion2(){
     
            System.out.println("\n*** SEGUNDA FUNCION ***");
            
-           System.out.print("Ingrse el numero de filas de su matriz: ");
+           System.out.print("Ingrese el numero de filas de su matriz: ");
            int filas = entrada.nextInt();
            System.out.print("Ingrese el numero de columnas de su matriz: ");
            int columnas = entrada.nextInt();
-    
+           
+           int matriz [][] = new int[filas][columnas]; 
+           
+           //LLENAR LA MATRIZ:
+           for (int X = 0; X < filas; X++) {
+               for (int Y = 0; Y < columnas; Y++) {
+                   matriz[X][Y] = (int) (23 * (Math.pow(X,4)) + 20 * (Math.pow(Y,3)) - 3);
+               }
+            }
+           
+            //IMPRIMIR LA MATRIZ:
+            for (int i = 0; i < filas; i++) {
+                for (int j = 0; j < columnas; j++) {
+                    System.out.print(matriz[i][j] + " ");
+                }
+                System.out.println(" ");
+        }                          
     }
     
     //TERCER EJECICIO:
