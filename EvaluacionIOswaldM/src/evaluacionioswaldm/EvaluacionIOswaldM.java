@@ -6,16 +6,48 @@ import java.util.Scanner;
  */
 public class EvaluacionIOswaldM {
     
-    Scanner entrada = new Scanner(System.in);
+    static Scanner entrada = new Scanner(System.in);
     
     public static void main(String[] args) {
         EvaluacionIOswaldM llamado = new EvaluacionIOswaldM();
         
-        llamado.funcion1();
-        llamado.funcion2();
-        llamado.funcion3();
-        llamado.funcion4();
+        int opcion;
+        //INVOCACION DE LOS MÉTODOS A TRAVÉS DE UN MENU BASADO EN CICLO DO WHILE Y SENTENCIA SWITCH
+        do{
+        System.out.println("\nBienvenido al Menu de Funciones, por favor escoja una");
+        System.out.println("1: Funcion 1");
+        System.out.println("2: Funcion 2");
+        System.out.println("3: Funcion 3");
+        System.out.println("4: Funcion 4");
+        System.out.println("0: Salir");
+        opcion = entrada.nextInt();
+        
+        switch(opcion){
+            
+            case 1:
+                llamado.funcion1();
+            break;
+            
+            case 2:
+                llamado.funcion2();
+            break;
+            
+            case 3:
+                llamado.funcion3();
+            break;
+            
+            case 4:
+                llamado.funcion4();
+            break;  
+            
+            case 0:
+                break;
+                
+            default:
+                System.out.println("Opcion incorrecta");
         }
+        }while(opcion != 0);
+    }
     //PRIMER EJERCICIO
     public void funcion1(){
         
