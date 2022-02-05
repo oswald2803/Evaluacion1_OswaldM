@@ -14,6 +14,7 @@ public class EvaluacionIOswaldM {
         llamado.funcion1();
         llamado.funcion2();
         llamado.funcion3();
+        llamado.funcion4();
         }
     //PRIMER EJERCICIO
     public void funcion1(){
@@ -229,6 +230,52 @@ public class EvaluacionIOswaldM {
                System.out.println("La matriz no es identidad");
            }
     }
-    //CUARTA EJERCICIO
+    //CUARTO EJERCICIO
     
+    public void funcion4(){
+        
+        System.out.println("\n*** CUARTA FUNCION ***");
+        
+        System.out.print("\nIngrese la dimension de su matriz: ");
+        int dimension = entrada.nextInt();
+        int matriz [][] = new int [dimension][dimension];
+        
+        //LLENADO DE MATRIZ
+        System.out.println(" ");
+        for (int i = 0; i < dimension; i++) {
+            for (int j = 0; j < dimension; j++) {
+                System.out.print("Ingrese un elemento de su matriz: ");
+                matriz[i][j] = entrada.nextInt();
+            }
+        }
+        //IMPRIMIR MATRIZ
+        System.out.println("\nSu matriz es: ");
+        for (int i = 0; i < dimension; i++) {
+            for (int j = 0; j < dimension; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+        
+        //VARIABLE PARA COMPROBAR SI LA MATRIZ ES TRIANGULAR SUPERIOR
+        boolean triangular = true;
+        
+        //EVALUANDO LA MATRIZ PARA COMPROBAR SI ES TRIANGULAR SUPERIOR
+        for (int i = 0; i < dimension; i++) {
+            for (int j = 0; j < dimension; j++) {
+                if(i > j && matriz[i][j] != 0){
+                    triangular = false;
+                }
+                if(i <= j && matriz[i][j] == 0){
+                    triangular = false;
+                }
+            }
+        }     
+        if (triangular == true){
+            System.out.println("\nLa matriz es triangular superior");
+        }
+        else if (triangular == false){
+            System.out.println("\nLa matriz no es triangular superior");
+        }
+    }
 }
